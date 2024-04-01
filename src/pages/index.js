@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar"
 import Image from "next/image"
 import Card from "@/components/card"
+import Skills from "@/components/skills"
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
         <div className="mt-28 md:mt-32 grid justify-items-center">
           <a id="profile" className="relative -top-[120px]"></a>
           <div className="grid gap-x-4">
-            <Image src="/photo.png" alt="profile picture" className="row-span-2 justify-self-center" width="100" height="100"/>
+            <Image src="/photo.png" alt="profile picture" className="row-span-2 justify-self-center" width="100" height="100" />
             <h1 className="self-end sm:col-start-2 uppercase font-sans lg:text-7xl md:text-6xl text-3xl bg-clip-text bg-gradient-to-r from-lavender via-pomp to-celtic-blue text-transparent">Tomi Jokinen</h1>
             <h2 className="self-start typewriter text-xs sm:text-base w-full">Full-stack Developer</h2>
           </div>
@@ -23,43 +24,7 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="mt-12 col-span-1">
-            <a id="cv" className="relative -top-[120px]"></a>
-            <h2 className="font-bold text-4xl">Skills</h2>
-            <div className="grid grid-cols-6 text-4xl">
-              <p className="col-span-6 text-xl">Design</p>
-              <i className="devicon-photoshop-plain colored"></i>
-              <i className="devicon-illustrator-plain colored"></i>
-              <i className="devicon-figma-plain colored"></i>
-
-              <p className="col-span-6 text-xl">Programming, scripting & markup</p>
-              <i className="devicon-javascript-plain colored"></i>
-              <i className="devicon-java-plain-wordmark colored"></i>
-              <i className="devicon-python-plain-wordmark colored"></i>
-              <i className="devicon-kotlin-plain-wordmark colored"></i>
-              <i className="devicon-html5-plain-wordmark colored"></i>
-              <i className="devicon-css3-plain-wordmark colored"></i>
-
-              <p className="col-span-6 text-xl">Frameworks & libraries</p>
-              <i className="devicon-react-original-wordmark colored"></i>
-              <i className="devicon-nextjs-original-wordmark"></i>
-              <i className="devicon-nodejs-plain-wordmark colored"></i>
-              <i className="devicon-tailwindcss-original-wordmark colored"></i>
-
-              <p className="col-span-6 text-xl">Version control</p>
-              <i className="devicon-git-plain-wordmark colored"></i>
-              <i className="devicon-github-original-wordmark"></i>
-
-              <p className="col-span-6 text-xl">Databases</p>
-              <i className="devicon-mongodb-plain-wordmark colored"></i>
-              <i className="devicon-graphql-plain-wordmark colored"></i>
-              <i className="devicon-mysql-plain-wordmark colored"></i>
-
-              <p className="col-span-6 text-xl">Deployment</p>
-              <i className="devicon-docker-plain-wordmark colored"></i>
-            </div>
-
-          </div>
+          <Skills />
           <div className="grid gap-y-4 mt-12 col-span-1">
             <h2 className="font-bold text-4xl">Education</h2>
             <Card organization={"Tampere University"} disableIcon title={"M.Sc. in Computing Sciences"} date={"2020 -"} description={"•	Database establishing, modeling, design, SQL queries.\n•	Data Structures and Algorithms.\n•	Programming: C, Java, JavaScript, Python.\n•	Full Stack Web Development.\n•	Software Production.\n•	Artificial Intelligence, Machine Learning.\n•	Cybersecurity."} />
@@ -104,12 +69,12 @@ export default function Home() {
               <h2 className="font-bold text-4xl">Projects</h2>
             </div>
             <Card organization={""} iconClassName={"text-xl devicon-javascript-plain colored"} title={"Elemental Invaders"} date={"2023"} description={"Elemental Invaders is a 2D game project where players defend their territory from waves of elemental creatures. The game is developed using JavaScript and the HTML5 Canvas API, incorporating strategic gameplay elements as players need to utilize the appropriate elemental projectiles to defeat the invaders. The project features a responsive design, making it accessible for both desktop and mobile users. In addition to the core technologies, the game employs npm as a package manager and is deployed on Vercel for a live version."}>
-              <Image src="/elemental.png" width="348" height="114" className="col-span-8" alt={"project screenshot"}/>
+              <Image src="/elemental.png" width="348" height="114" className="col-span-8" alt={"project screenshot"} />
               <a href="https://github.com/tjokinen/elemental-invaders/" target="_blank" className="col-span-8 mt-2"><button className="relative z-0 text-base bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200 p-4"><i className="devicon-github-original"></i> View Repo on Github</button></a>
               <a href="https://elemental-invaders.vercel.app" target="_blank" className="col-span-8 mt-2"><button className="text-base bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200 p-4"><i className="devicon-nextjs-line"></i> View Live on Vercel</button></a>
             </Card>
             <Card organization={"Solidabis"} iconClassName={"text-xl devicon-nextjs-original-wordmark"} title={"Coding Challenge"} date={"2022"} description={"This project was an entry to the 2022 coding challenge by Solidabis.\n\nThe purpose of this project was to show some basic React SPA functionality with API calls.\n\nThe task was to carry out a food fight themed battle, where foods fight each other with different stats. For the implementation of the task, nutritional contents of different foods were supposed to be retrieved and some statistics should be implemented based on which the foods would fight each other. The technologies used in the implementation were free to choose.\n\nThe application has the following functions:\n\n•	Search of various nutritional contents from an external source (Fineli API)\n\n•	Converting nutritional contents into character categories\n\n•	Logic implementation for a duel between two food figures\n\n•	Presentation of the results on the Frontend\n\nThe project was originally created using React, Node.js, Express and deployed on Heroku. Now the project has been migrated to use Next.js and is now deployed on Vercel."}>
-              <Image src="/ruokarahina.png" width="348" height="114" className="col-span-8" alt={"project screenshot"}/>
+              <Image src="/ruokarahina.png" width="348" height="114" className="col-span-8" alt={"project screenshot"} />
               <a href="https://github.com/tjokinen/koodihaaste-2022/" target="_blank" className="col-span-8 mt-2"><button className="relative z-0 text-base bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200 p-4"><i className="devicon-github-original"></i> View Repo on Github</button></a>
               <a href="https://koodihaaste-2022-sandy.vercel.app" target="_blank" className="col-span-8 mt-2"><button className="text-base bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200 p-4"><i className="devicon-nextjs-line"></i> View Live on Vercel</button></a>
             </Card>
