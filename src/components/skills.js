@@ -12,7 +12,9 @@ export default function Skills() {
                     "devicon-kotlin-plain-wordmark colored",
                     "devicon-swift-plain-wordmark colored",
                     "devicon-html5-plain-wordmark colored",
-                    "devicon-css3-plain-wordmark colored"]} />
+                    "devicon-css3-plain-wordmark colored",
+                    "devicon-csharp-line",
+                    "devicon-c-line"]} />
 
                 <Skill title="Frameworks & libraries" icons={[
                     "devicon-jetpackcompose-plain-wordmark",

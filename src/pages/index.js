@@ -32,8 +32,9 @@ export default function Home() {
           </div>
           <div className="grid gap-y-4 mt-12 col-span-1">
             <h2 className="font-bold text-4xl">Certifications & courses</h2>
+            <Card organization={"Microsoft / Coursera"} iconClassName={"text-xl devicon-azure-plain colored"} title={"Create Serverless Applications"} date={"2024"} description={"This course is a part of Microsoft Azure Developer Associate (AZ-204) Professional Certificate. Azure Function development, deployment and testing. Evaluating Azure services for integration and process automation scenarios."} />
             <Card organization={"Hyperskill / JetBrains Academy"} iconClassName={"text-xl devicon-kotlin-plain-wordmark colored"} title={"Kotlin Core"} date={"2023"} description={"Kotlin syntax, application design with functional decomposition, key programming concepts, OOP decomposition, Java and Kotlin libraries"} />
-            <Card organization={"HackerRank"} iconClassName={"text-xl devicon-react-original-wordmark colored"} title={"React (Basic) Certification"} date={"2023"} description={"React (Basic) covers topics like Basic Routing, Rendering Elements,State Management (Internal Component State), Handling Events, ES6 and JavaScript and Form Validation."} />
+            <Card organization={"HackerRank"} iconClassName={"text-xl devicon-react-original-wordmark colored"} title={"React (Basic) Certification"} date={"2023"} description={"React (Basic) covers topics like Basic Routing, Rendering Elements, State Management (Internal Component State), Handling Events, ES6 and JavaScript and Form Validation."} />
             <Card organization={""} iconClassName={"text-xl devicon-css3-plain-wordmark colored"} title={"CSS Certification"} date={"2023"} description={"Cascading and Inheritance, text styling fundamentals, layouts, boxing of elements."} />
             <Card organization={"Aalto University"} iconClassName={"text-xl devicon-python-plain-wordmark colored"} title={"Machine Learning with Python"} date={"2020"} description={""} />
             <Card organization={"University of Helsinki"} iconClassName={"text-xl devicon-react-plain-wordmark colored"} title={"Full Stack Web Development"} date={"2020"} description={""} />
@@ -48,6 +49,11 @@ export default function Home() {
           <div className="grid gap-y-4 mt-12 col-span-1">
             <h2 className="font-bold text-4xl">Experience</h2>
             <div className="relative min-h-[50px] max-w-[50%]">
+              <Image src="/twlogo.svg" alt="TravelWifi logo" fill />
+            </div>
+            <Card organization={"TravelWifi"} disableIcon title={"Mobile Developer (Android / iOS)"} date={"2023 - Present"}
+              description={"•	Developed and maintained high-quality mobile applications.\n• Led the integration of Jetpack Compose and Material Design to modernize app interfaces, enhancing user engagement.\n• Collaborated closely with product and design teams to define, design, and ship new features.\n• Implemented and maintained robust code with Kotlin, using Compose Navigation, Coroutines, and flows for streamlined operations.\n• Worked with external data sources and APIs, ensuring seamless data integration and functionality.\n• Employed continuous integration tools and Git for efficient version control and development workflow.\n• Worked with eSIM provisioning technology, mobile IoT application development and embedded Android development."} />
+            <div className="relative min-h-[50px] max-w-[50%]">
               <Image src="/Telus_International_logo.svg" alt="Telus logo" fill />
             </div>
             <Card organization={"Telus International (Independent Contractor)"} disableIcon title={"Data Analyst"} date={"2021 - 2023"}
@@ -55,7 +61,7 @@ export default function Home() {
             <div className="relative min-h-[50px] max-w-[50%]">
               <Image src="/Pohjola_logo.svg" alt="Pohjola logo" fill />
             </div>
-            <Card organization={"Pohjola Insurance"} disableIcon title={"Operations Production Owner / Claims Advisor"} date={"2020 - Present"}
+            <Card organization={"Pohjola Insurance"} disableIcon title={"Operations Production Owner / Claims Advisor"} date={"2020 - 2023"}
               description={"•	Acted as a key contributor in the optimization and automation of insurance claims operations and processes for a large insurance company.\n•	Spearheaded an automation project for a specific claims task, replacing manual processes with a software robot, which increased operational efficiency and reduced workload equivalent to 2 full-time employees.\n•	Monitored team performance, ensuring goal achievement and effective prioritization of tasks.\n•	Facilitated team ceremonies, promoting collaboration, communication, and continuous improvement.\n•	Collaborated closely with the team to identify areas of improvement and develop streamlined claims handling procedures for both manual and automated tasks.\n•	Played a crucial role in enhancing claims throughput and quality by continuously refining and implementing advanced process solutions.\nRelevant Skills:\n•	Process optimization and automation\n•	Project management\n•	Team leadership and collaboration\n•	RPA implementation\n•	Analytical and problem-solving skills\n•	Facilitation of team ceremonies"} />
             <div className="relative min-h-[50px] max-w-[30%]">
               <Image src="/kvs_logo.svg" alt="KVS logo" fill />
@@ -68,6 +74,11 @@ export default function Home() {
               <a id="projects" className="relative -top-[120px]"></a>
               <h2 className="font-bold text-4xl">Projects</h2>
             </div>
+            <Card organization={""} iconClassName={"text-xl devicon-javascript-plain colored"} title={"JSON to Kotlin Data Class Converter"} date={"2024"} description={"JSON to Kotlin data class converter. Static HTML/CSS/JS page hosted on Github Pages. JSON to Kotlin Conversion: Converts JSON responses directly into Kotlin data classes. Nested Structures: Handles nested JSON structures and generates corresponding Kotlin classes. @Parcelize Support: Optionally adds the @Parcelize annotation to classes, including \": Parcelable\" inheritance. Comment Out \"Any\" Properties: Automatically comments out properties of type \"Any\" when @Parcelize is enabled. Copy to Clipboard: Allows easy copying of the generated Kotlin data classes directly to the clipboard."}>
+              <Image src="/jsontokotlin.png" width="348" height="114" className="col-span-8" alt={"project screenshot"} />
+              <a href="https://github.com/tjokinen/json-to-kotlin/" target="_blank" className="col-span-8 mt-2"><button className="relative z-0 text-base bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200 p-4"><i className="devicon-github-original"></i> View Repo on Github</button></a>
+              <a href="https://tjokinen.github.io/json-to-kotlin/" target="_blank" className="col-span-8 mt-2"><button className="text-base bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200 p-4"><i className="devicon-github-original"></i> View Live on Github Pages</button></a>
+            </Card>
             <Card organization={""} iconClassName={"text-xl devicon-javascript-plain colored"} title={"Elemental Invaders"} date={"2023"} description={"Elemental Invaders is a 2D game project where players defend their territory from waves of elemental creatures. The game is developed using JavaScript and the HTML5 Canvas API, incorporating strategic gameplay elements as players need to utilize the appropriate elemental projectiles to defeat the invaders. The project features a responsive design, making it accessible for both desktop and mobile users. In addition to the core technologies, the game employs npm as a package manager and is deployed on Vercel for a live version."}>
               <Image src="/elemental.png" width="348" height="114" className="col-span-8" alt={"project screenshot"} />
               <a href="https://github.com/tjokinen/elemental-invaders/" target="_blank" className="col-span-8 mt-2"><button className="relative z-0 text-base bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-200 p-4"><i className="devicon-github-original"></i> View Repo on Github</button></a>
