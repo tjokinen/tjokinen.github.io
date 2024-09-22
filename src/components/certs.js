@@ -10,8 +10,8 @@ export default function Certs() {
             <Card organization={"HackerRank"} iconClassName={"text-xl devicon-react-original-wordmark colored"} title={"React (Basic) Certification"} date={"2023"} description={"React (Basic) covers topics like Basic Routing, Rendering Elements, State Management (Internal Component State), Handling Events, ES6 and JavaScript and Form Validation."} />
             <Card organization={""} iconClassName={"text-xl devicon-css3-plain-wordmark colored"} title={"CSS Certification"} date={"2023"} description={"Cascading and Inheritance, text styling fundamentals, layouts, boxing of elements."} />
             <Card organization={"Aalto University"} iconClassName={"text-xl devicon-python-plain-wordmark colored"} title={"Machine Learning with Python"} date={"2020"} description={""} />
-            <Card organization={"University of Helsinki"} iconClassName={"text-xl devicon-react-plain-wordmark colored"} title={"Full Stack Web Development"} date={"2020"} description={""} />
-            <Card organization={"University of Helsinki"} iconClassName={"text-xl devicon-java-plain-wordmark colored"} title={"Advanced Programming"} date={"2019"} description={""} />
+            <Card organization={"University of Helsinki"} iconClassName={"text-xl devicon-react-plain-wordmark colored"} title={"Full Stack Web Development"} date={"2020"} description={"MongoDB, Express, React, Node.js"} />
+            <Card organization={"University of Helsinki"} iconClassName={"text-xl devicon-java-plain-wordmark colored"} title={"Advanced Programming"} date={"2019"} description={"Java"} />
           </div>
     )
 }
