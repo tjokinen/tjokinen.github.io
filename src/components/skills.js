@@ -4,9 +4,9 @@ export default function Skills() {
             <a id="cv" className="relative -top-[120px]"></a>
             <h2 className="font-bold text-4xl">Skills</h2>
             <div className="grid grid-cols-6 text-4xl">
-                <Skill title="Design" icons={["devicon-photoshop-plain colored", "devicon-illustrator-plain colored", "devicon-figma-plain colored"]} />
+                <Skill title="Design tools" icons={["devicon-photoshop-plain colored", "devicon-illustrator-plain colored", "devicon-figma-plain colored"]} />
 
-                <Skill title="Programming, scripting & markup" icons={["devicon-javascript-plain colored",
+                <Skill title="Programming, scripting & markup languages" icons={["devicon-javascript-plain colored",
                     "devicon-java-plain-wordmark colored",
                     "devicon-python-plain-wordmark colored",
                     "devicon-kotlin-plain-wordmark colored",
@@ -30,7 +30,7 @@ export default function Skills() {
                     "devicon-graphql-plain-wordmark colored",
                     "devicon-mysql-plain-wordmark colored"]} />
 
-                <Skill title="Deployment" icons={["devicon-docker-plain-wordmark colored"]} />
+                <Skill title="Development tools" icons={["devicon-docker-plain-wordmark colored"]} />
             </div>
 
         </div>
@@ -39,8 +39,10 @@ export default function Skills() {
 
 function Skill({ title, icons }) {
     const iconsI = []
+    let key = 0
     for (let icon in icons) {
-        iconsI.push(<i className={icons[icon]} />)
+        iconsI.push(<i key={key} className={icons[icon]} />)
+        key++
     }
 
     return (
