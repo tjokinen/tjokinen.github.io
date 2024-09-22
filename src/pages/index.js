@@ -14,23 +14,25 @@ export default function Home() {
           <div className="grid gap-x-4">
             <Image src="/photo.png" alt="profile picture" className="row-span-2 justify-self-center" width="100" height="100" />
             <h1 className="self-end sm:col-start-2 uppercase font-sans lg:text-7xl md:text-6xl text-3xl bg-clip-text bg-gradient-to-r from-lavender via-pomp to-celtic-blue text-transparent">Tomi Jokinen</h1>
-            <h2 className="self-start typewriter text-xs sm:text-base w-full">Full-stack Developer</h2>
+            <h2 className="self-start typewriter text-xs sm:text-base w-full">Software Developer</h2>
           </div>
         </div>
         <div className="mt-12 grid justify-items-center">
           <p className="text-left max-w-xl">
-            Results-oriented full-stack developer, with a proven track record in project management and team collaboration. Adept at leveraging various programming languages and frameworks to deliver solutions that drive efficiency and innovation.
+            Results-oriented software developer, with a proven track record in project management and team collaboration. Adept at leveraging various programming languages and frameworks to deliver solutions that drive efficiency and innovation.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2">
           <Skills />
           <div className="grid gap-y-4 mt-12 col-span-1">
+            <a id="education" className="relative -top-[120px]"></a>
             <h2 className="font-bold text-4xl">Education</h2>
             <Card organization={"Tampere University"} disableIcon title={"M.Sc. in Computing Sciences"} date={"2020 -"} description={"•	Database establishing, modeling, design, SQL queries.\n•	Data Structures and Algorithms.\n•	Programming: C, Java, JavaScript, Python.\n•	Full Stack Web Development.\n•	Software Production.\n•	Artificial Intelligence, Machine Learning.\n•	Cybersecurity."} />
             <Card organization={"Seinäjoki University of Applied Sciences"} disableIcon title={"Bachelor of Business Administration"} date={"2011 - 2016"} description={"International Business"} />
           </div>
           <div className="grid gap-y-4 mt-12 col-span-1">
+            <a id="certs" className="relative -top-[120px]"></a>
             <h2 className="font-bold text-4xl">Certifications & courses</h2>
             <Card organization={"Microsoft / Coursera"} iconClassName={"text-xl devicon-azure-plain colored"} title={"Create Serverless Applications"} date={"2024"} description={"This course is a part of Microsoft Azure Developer Associate (AZ-204) Professional Certificate. Azure Function development, deployment and testing. Evaluating Azure services for integration and process automation scenarios."} />
             <Card organization={"Hyperskill / JetBrains Academy"} iconClassName={"text-xl devicon-kotlin-plain-wordmark colored"} title={"Kotlin Core"} date={"2023"} description={"Kotlin syntax, application design with functional decomposition, key programming concepts, OOP decomposition, Java and Kotlin libraries"} />
@@ -41,12 +43,14 @@ export default function Home() {
             <Card organization={"University of Helsinki"} iconClassName={"text-xl devicon-java-plain-wordmark colored"} title={"Advanced Programming"} date={"2019"} description={""} />
           </div>
           <div className="grid h-fit gap-y-4 mt-12 col-span-1">
+            <a id="languages" className="relative -top-[120px]"></a>
             <h2 className="font-bold text-4xl">Languages</h2>
             <Card organization={"English"} disableIcon title={""} date={"Fluent"} description={""} />
             <Card organization={"Spanish"} disableIcon title={""} date={"Fluent"} description={""} />
             <Card organization={"Finnish"} disableIcon title={""} date={"Native"} description={""} />
           </div>
           <div className="grid gap-y-4 mt-12 col-span-1">
+            <a id="experience" className="relative -top-[120px]"></a>
             <h2 className="font-bold text-4xl">Experience</h2>
             <div className="relative min-h-[50px] max-w-[50%]">
               <Image src="/twlogo.svg" alt="TravelWifi logo" fill />

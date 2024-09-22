@@ -1,7 +1,7 @@
 export default function Skills() {
     return (
         <div className="mt-12 col-span-1">
-            <a id="cv" className="relative -top-[120px]"></a>
+            <a id="skills" className="relative -top-[120px]"></a>
             <h2 className="font-bold text-4xl">Skills</h2>
             <div className="grid grid-cols-6 text-4xl">
                 <Skill title="Design tools" icons={["devicon-photoshop-plain colored", "devicon-illustrator-plain colored", "devicon-figma-plain colored"]} />
