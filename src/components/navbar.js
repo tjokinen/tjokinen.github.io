@@ -101,7 +101,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation Overlay */}
       <div
-        className={`fixed inset-0 bg-dark/95 backdrop-blur-lg z-40 transition-transform duration-300 md:hidden ${
+        className={`fixed inset-0 bg-dark/95 backdrop-blur-lg z-40 transition-transform duration-300 lg:hidden ${
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
