@@ -5,7 +5,7 @@ export default function Education() {
         {
             organization: "Tampere University",
             title: "M.Sc. in Computing Sciences",
-            date: "2020 - Present",
+            date: "2020 - 2025",
             description: [
                 "Database establishing, modeling, design, SQL queries.",
                 "Data Structures and Algorithms.",
@@ -48,6 +48,11 @@ export default function Education() {
                                 <div>
                                     <h3 className="font-raleway font-medium text-2xl text-white/90 group-hover:text-emerald-400 transition-colors duration-300">
                                         {edu.title}
+                                        {edu.title === "M.Sc. in Computing Sciences" && (
+                                            <span className="text-white/40 text-lg ml-2 font-normal">
+                                                (coursework completed)
+                                            </span>
+                                        )}
                                     </h3>
                                     <p className="font-raleway text-white/60 text-lg mt-1">
                                         {edu.organization}
