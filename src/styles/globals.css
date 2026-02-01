@@ -1,6 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@keyframes pulse-border {
+  0%, 100% { border-color: rgba(255, 255, 255, 0.1); }
+  50% { border-color: rgba(0, 208, 97, 0.22); }
+}
+
+.animate-pulse-border {
+  animation: pulse-border 4s infinite ease-in-out;
+}
+
 
 .typewriter {
     overflow: hidden; /* Ensures the content is not revealed until the animation */

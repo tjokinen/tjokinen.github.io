@@ -3,6 +3,7 @@ import Image from "next/image"
 export default function Hero() {
   return (
     <section
+      id="profile"
       className="relative w-full overflow-hidden bg-dark flex items-center justify-center"
       style={{
         position: 'relative',
