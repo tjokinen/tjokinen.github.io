@@ -3,28 +3,37 @@ import Image from "next/image"
 export default function Projects() {
     const projects = [
         {
-            title: "App 1",
-            description: "Description of the app",
-            features: [
-                "Feature 1",
-                "Feature 2",
-                "Feature 3"
+            title: "Navimo",
+            description: "Production mobile app for purchasing and managing travel eSIMs, providing connectivity in 200+ destinations worldwide.",
+            metrics: [
+                { label: "Monthly Active Users", value: "~800" },
+                { label: "Lifetime Installs", value: "10k+" }
             ],
-            stack: ["Kotlin", "Jetpack Compose", "Room", "Material 3"],
-            image: "/elemental.png",
+            features: [
+                "Led Android app development from scratch using Kotlin and Jetpack Compose",
+                "Participated in the full app development lifecycle across both Android and iOS",
+                "Contributed to iOS development using Swift and SwiftUI in collaboration with the iOS team",
+                "Built core flows for purchasing, installing, and managing travel eSIMs"
+            ],
+            stack: ["Kotlin", "Jetpack Compose", "Swift", "SwiftUI", "Firebase", "Stripe", "Datadog RUM", "Algolia"],
+            image: "/navimo-screenshot.jpeg",
             playStore: "#",
             appStore: "#"
         },
         {
-            title: "App 2",
-            description: "Description of the app",
-            features: [
-                "Feature 1",
-                "Feature 2",
-                "Feature 3"
+            title: "TravelWifi",
+            description: "Production mobile app for managing data plans for portable hotspots and purchasing eSIMs, used by customers worldwide.",
+            metrics: [
+                { label: "Monthly Active Users", value: "10k+" },
+                { label: "Lifetime Installs", value: "90k+" }
             ],
-            stack: ["Kotlin", "Jetpack Compose", "Coroutines", "Clean Architecture"],
-            image: "/phantom_cartomancer.png",
+            features: [
+                "Led development of the Android app from scratch during a React Native → native migration",
+                "Developed and maintained features across both Android and iOS, owning the full release and publishing pipeline",
+                "Introduced Datadog RUM and reduced per-session error rate from ~5% to near zero"
+            ],
+            stack: ["Kotlin", "Jetpack Compose", "Swift", "SwiftUI", "Firebase", "Braintree", "Datadog RUM", "Algolia"],
+            image: "/tw-screenshot.jpg",
             playStore: "#",
             appStore: "#"
         }
@@ -46,16 +55,16 @@ export default function Projects() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     {projects.map((project, index) => (
-                        <div 
-                            key={index} 
+                        <div
+                            key={index}
                             className="group flex flex-col bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-emerald-500/30 transition-all duration-500"
                         >
                             {/* Project Image */}
                             <div className="relative h-64 md:h-80 overflow-hidden">
-                                <Image 
-                                    src={project.image} 
-                                    alt={project.title} 
-                                    fill 
+                                <Image
+                                    src={project.image}
+                                    alt={project.title}
+                                    fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-60" />
@@ -66,13 +75,28 @@ export default function Projects() {
                                 <h3 className="font-raleway font-medium text-2xl text-white/90 mb-4 group-hover:text-emerald-400 transition-colors duration-300">
                                     {project.title}
                                 </h3>
-                                
+
                                 <p className="font-raleway text-white/70 leading-relaxed mb-6">
                                     {project.description}
                                 </p>
 
+                                {project.metrics && (
+                                    <div className="flex gap-8 mb-8">
+                                        {project.metrics.map((metric, i) => (
+                                            <div key={i} className="flex flex-col">
+                                                <span className="text-emerald font-medium text-2xl tracking-tight">
+                                                    {metric.value}
+                                                </span>
+                                                <span className="text-white/40 text-[10px] uppercase tracking-widest font-semibold mt-1">
+                                                    {metric.label}
+                                                </span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+
                                 <div className="space-y-4 mb-8">
-                                    <h4 className="font-raleway text-xs font-semibold uppercase tracking-widest text-white/40">Key Features</h4>
+                                    <h4 className="font-raleway text-xs font-semibold uppercase tracking-widest text-white/40">Key Contributions</h4>
                                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                                         {project.features.map((feature, i) => (
                                             <li key={i} className="font-raleway text-sm text-white/60 flex items-center gap-2">
@@ -91,12 +115,12 @@ export default function Projects() {
                                             </span>
                                         ))}
                                     </div>
-                                    
+
                                     <div className="flex gap-4">
                                         {project.playStore !== "#" && (
-                                            <a 
-                                                href={project.playStore} 
-                                                target="_blank" 
+                                            <a
+                                                href={project.playStore}
+                                                target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="flex items-center gap-2 text-white/80 hover:text-emerald-400 transition-colors duration-300"
                                             >
@@ -105,9 +129,9 @@ export default function Projects() {
                                             </a>
                                         )}
                                         {project.appStore !== "#" && (
-                                            <a 
-                                                href={project.appStore} 
-                                                target="_blank" 
+                                            <a
+                                                href={project.appStore}
+                                                target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="flex items-center gap-2 text-white/80 hover:text-emerald-400 transition-colors duration-300"
                                             >
