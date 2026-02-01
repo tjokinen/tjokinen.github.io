@@ -1,31 +1,116 @@
-import Card from "@/components/card"
 import Image from "next/image"
 
 export default function Experience() {
+    const experiences = [
+        {
+            organization: "TravelWifi",
+            logo: "/twlogo.svg",
+            title: "Mobile Developer (Android / iOS)",
+            date: "2023 - Present",
+            description: [
+                "Developed and maintained high-quality mobile applications.",
+                "Led the integration of Jetpack Compose and Material Design to modernize app interfaces, enhancing user engagement.",
+                "Collaborated closely with product and design teams to define, design, and ship new features.",
+                "Implemented and maintained robust code with Kotlin, using Compose Navigation, Coroutines, and flows for streamlined operations.",
+                "Worked with external data sources and APIs, ensuring seamless data integration and functionality.",
+                "Employed continuous integration tools and Git for efficient version control and development workflow.",
+                "Worked with eSIM provisioning technology, mobile IoT application development and embedded Android development."
+            ]
+        },
+        {
+            organization: "Telus International (Independent Contractor)",
+            logo: "/Telus_International_logo.svg",
+            title: "Data Analyst",
+            date: "2021 - 2023",
+            description: [
+                "Collaborated on various projects focused on processing data for AI training purposes.",
+                "Performed data collection from multiple sources, ensuring a comprehensive and diverse dataset for AI model training.",
+                "Conducted data annotation, accurately labeling and categorizing information to facilitate efficient AI training processes.",
+                "Conducted data analysis, identifying patterns, trends, and insights to inform AI model development and optimization.",
+                "Implemented quality assurance processes, validating the accuracy and consistency of the collected and annotated data to ensure optimal AI training results."
+            ]
+        },
+        {
+            organization: "Pohjola Insurance",
+            logo: "/Pohjola_logo.svg",
+            title: "Operations Production Owner / Claims Advisor",
+            date: "2020 - 2023",
+            description: [
+                "Acted as a key contributor in the optimization and automation of insurance claims operations and processes for a large insurance company.",
+                "Spearheaded an automation project for a specific claims task, replacing manual processes with a software robot, which increased operational efficiency and reduced workload equivalent to 2 full-time employees.",
+                "Monitored team performance, ensuring goal achievement and effective prioritization of tasks.",
+                "Facilitated team ceremonies, promoting collaboration, communication, and continuous improvement.",
+                "Collaborated closely with the team to identify areas of improvement and develop streamlined claims handling procedures for both manual and automated tasks.",
+                "Played a crucial role in enhancing claims throughput and quality by continuously refining and implementing advanced process solutions."
+            ]
+        },
+        {
+            organization: "KVS Oy (Independent Contractor)",
+            logo: "/kvs_logo.svg",
+            title: "Localization Consultant",
+            date: "2022 - 2023",
+            description: [
+                "Localized training and marketing materials.",
+                "Demonstrated strong project management skills by efficiently handling expanding project scope and delivering on time.",
+                "Collaborated closely with client to enhance the quality and effectiveness of localized materials."
+            ]
+        }
+    ];
+
     return (
-        <div className="grid gap-y-4 mt-12 col-span-1">
-            <a id="experience" className="relative -top-[120px]"></a>
-            <h2 className="font-bold text-4xl">Experience</h2>
-            <div className="relative min-h-[50px] max-w-[50%]">
-                <Image src="/twlogo.svg" alt="TravelWifi logo" fill />
+        <section id="experience" className="py-16">
+            <div className="max-w-7xl mx-auto">
+                <h2 className="font-raleway font-medium text-4xl md:text-5xl mb-12 tracking-tight">
+                    Experience
+                </h2>
+
+                <div className="space-y-12">
+                    {experiences.map((exp, index) => (
+                        <div key={index} className="group relative grid grid-cols-1 md:grid-cols-[180px_1fr] gap-8">
+                            {/* Left side: Logo and Date */}
+                            <div className="flex flex-col gap-4">
+                                <div className="relative h-12 w-32 md:w-full grayscale group-hover:grayscale-0 transition-all duration-500">
+                                    <Image 
+                                        src={exp.logo} 
+                                        alt={`${exp.organization} logo`} 
+                                        fill 
+                                        className="object-contain object-left"
+                                    />
+                                </div>
+                                <span className="font-raleway text-white/40 text-sm tracking-wider uppercase">
+                                    {exp.date}
+                                </span>
+                            </div>
+
+                            {/* Right side: Content */}
+                            <div className="flex flex-col gap-4">
+                                <div>
+                                    <h3 className="font-raleway font-medium text-2xl text-white/90 group-hover:text-emerald-400 transition-colors duration-300">
+                                        {exp.title}
+                                    </h3>
+                                    <p className="font-raleway text-white/60 text-lg mt-1">
+                                        {exp.organization}
+                                    </p>
+                                </div>
+                                
+                                <ul className="space-y-3">
+                                    {exp.description.map((item, i) => (
+                                        <li key={i} className="font-raleway text-white/70 leading-relaxed flex gap-3">
+                                            <span className="text-emerald-500/50 mt-1.5 text-xs">◆</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Decorative line between items */}
+                            {index !== experiences.length - 1 && (
+                                <div className="absolute -bottom-6 left-0 w-full h-px bg-gradient-to-r from-white/10 via-white/5 to-transparent md:hidden" />
+                            )}
+                        </div>
+                    ))}
+                </div>
             </div>
-            <Card organization={"TravelWifi"} disableIcon title={"Mobile Developer (Android / iOS)"} date={"2023 - Present"}
-                description={"•	Developed and maintained high-quality mobile applications.\n• Led the integration of Jetpack Compose and Material Design to modernize app interfaces, enhancing user engagement.\n• Collaborated closely with product and design teams to define, design, and ship new features.\n• Implemented and maintained robust code with Kotlin, using Compose Navigation, Coroutines, and flows for streamlined operations.\n• Worked with external data sources and APIs, ensuring seamless data integration and functionality.\n• Employed continuous integration tools and Git for efficient version control and development workflow.\n• Worked with eSIM provisioning technology, mobile IoT application development and embedded Android development."} />
-            <div className="relative min-h-[50px] max-w-[50%]">
-                <Image src="/Telus_International_logo.svg" alt="Telus logo" fill />
-            </div>
-            <Card organization={"Telus International (Independent Contractor)"} disableIcon title={"Data Analyst"} date={"2021 - 2023"}
-                description={"•	Collaborated on various projects focused on processing data for AI training purposes.\n•	Performed data collection from multiple sources, ensuring a comprehensive and diverse dataset for AI model training.\n•	Conducted data annotation, accurately labeling and categorizing information to facilitate efficient AI training processes.\n•	Conducted data analysis, identifying patterns, trends, and insights to inform AI model development and optimization.\n•	Implemented quality assurance processes, validating the accuracy and consistency of the collected and annotated data to ensure optimal AI training results.\nRelevant Skills:\n•	Data collection and annotation\n•	Data analysis and pattern recognition\n•	Quality assurance\n•	AI training data preparation"} />
-            <div className="relative min-h-[50px] max-w-[50%]">
-                <Image src="/Pohjola_logo.svg" alt="Pohjola logo" fill />
-            </div>
-            <Card organization={"Pohjola Insurance"} disableIcon title={"Operations Production Owner / Claims Advisor"} date={"2020 - 2023"}
-                description={"•	Acted as a key contributor in the optimization and automation of insurance claims operations and processes for a large insurance company.\n•	Spearheaded an automation project for a specific claims task, replacing manual processes with a software robot, which increased operational efficiency and reduced workload equivalent to 2 full-time employees.\n•	Monitored team performance, ensuring goal achievement and effective prioritization of tasks.\n•	Facilitated team ceremonies, promoting collaboration, communication, and continuous improvement.\n•	Collaborated closely with the team to identify areas of improvement and develop streamlined claims handling procedures for both manual and automated tasks.\n•	Played a crucial role in enhancing claims throughput and quality by continuously refining and implementing advanced process solutions.\nRelevant Skills:\n•	Process optimization and automation\n•	Project management\n•	Team leadership and collaboration\n•	RPA implementation\n•	Analytical and problem-solving skills\n•	Facilitation of team ceremonies"} />
-            <div className="relative min-h-[50px] max-w-[30%]">
-                <Image src="/kvs_logo.svg" alt="KVS logo" fill />
-            </div>
-            <Card organization={"KVS Oy (Independent Contractor)"} disableIcon title={"Localization Consultant"} date={"2022 - 2023"}
-                description={"•	Localized training and marketing materials.\n•	Demonstrated strong project management skills by efficiently handling expanding project scope and delivering on time.\n•	Collaborated closely with client to enhance the quality and effectiveness of localized materials."} />
-        </div>
+        </section>
     )
 }
