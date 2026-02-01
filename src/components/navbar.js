@@ -38,7 +38,9 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 ${
+      className={`fixed top-0 left-0 right-0 transition-all duration-300 px-6 py-4 ${
+        mobileMenuOpen ? 'z-[60]' : 'z-50'
+      } ${
         isScrolled
           ? 'bg-dark/80 backdrop-blur-md border-b border-white/10 py-3'
           : 'bg-transparent'
@@ -101,9 +103,10 @@ export default function Navbar() {
 
       {/* Mobile Navigation Overlay */}
       <div
-        className={`fixed inset-0 bg-dark/95 backdrop-blur-lg z-40 transition-transform duration-300 lg:hidden ${
+        className={`fixed inset-0 bg-dark/95 backdrop-blur-lg z-[55] transition-transform duration-300 lg:hidden ${
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
+        style={{ top: 0, height: '100vh' }}
       >
         <div className="flex flex-col items-center justify-center h-full space-y-8">
           {navLinks.map((link) => (
