@@ -52,7 +52,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -66,7 +66,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="text-white p-2 focus:outline-none"
