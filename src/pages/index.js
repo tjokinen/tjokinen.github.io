@@ -10,7 +10,7 @@ import Projects from "@/components/projects"
 export default function Home() {
   return (
     <div className="relative w-full" style={{ position: 'relative' }}>
-      {/* <Navbar></Navbar> */}
+      <Navbar></Navbar>
       <div className="h-24"></div>
       <Hero />
       <div className="max-w-screen-md mx-auto px-8 relative z-10 bg-dark">
