@@ -4,55 +4,43 @@ export default function Experience() {
     const experiences = [
         {
             organization: "TravelWifi",
+            location: "Houston, Texas, United States (Remote)",
             logo: "/twlogo.svg",
-            title: "Mobile Developer (Android / iOS)",
-            date: "2023 - Present",
+            title: "Senior Mobile Engineer",
+            date: "May 2023 – Present",
             description: [
-                "Developed and maintained high-quality mobile applications.",
-                "Led the integration of Jetpack Compose and Material Design to modernize app interfaces, enhancing user engagement.",
-                "Collaborated closely with product and design teams to define, design, and ship new features.",
-                "Implemented and maintained robust code with Kotlin, using Compose Navigation, Coroutines, and flows for streamlined operations.",
-                "Worked with external data sources and APIs, ensuring seamless data integration and functionality.",
-                "Employed continuous integration tools and Git for efficient version control and development workflow.",
-                "Worked with eSIM provisioning technology, mobile IoT application development and embedded Android development."
-            ]
+                "Owned the end-to-end mobile development lifecycle for Android and iOS applications, from requirements gathering and technical design to implementation, release, monitoring, and ongoing maintenance.",
+                "Designed application architecture and UX flows, and architected a modular white-label Android app using Jetpack Compose to enable flexible client-specific customization.",
+                "Led the technical design and implementation of in-app eSIM provisioning on Android, integrating with the Android Telephony API and EuiccManager, including carrier app privilege management for specific eSIMs based on their ARF.",
+                "Designed and implemented comprehensive MiFi device management features, enabling eSIM download, installation, removal, switching, and profile management via WiFi and Bluetooth connections.",
+                "Collaborated closely with product, design, and backend teams throughout discovery, development, and delivery phases to ensure scalable, secure, and maintainable solutions.",
+                "Established and followed modern development workflows, including code reviews, CI pipelines, version control, and release processes to ensure high-quality and reliable deployments.",
+                "Owned production releases and post-release operations, including publishing to Google Play and the App Store, monitoring crashes and performance, and delivering regular updates and improvements."
+            ],
+            skills: "React Native, Kotlin, Jetpack Compose, Material Design, Hilt, Dagger, Retrofit, Swift, SwiftUI, Firebase, Crashlytics, DataDog, Android Telephony / EuiccManager, Human Interface Guidelines, App Store, Google Play"
         },
         {
-            organization: "Telus International (Independent Contractor)",
+            organization: "Freelance",
+            location: "Tampere, Finland",
+            logo: "/photo.png", // Using photo.png as a placeholder for freelance if no specific logo
+            title: "Frontend & Mobile Engineer",
+            date: "Sep 2020 – May 2023",
+            description: [
+                "Developed web and mobile applications for startups and small businesses using React and React Native across iOS and Android platforms.",
+                "Designed UI-rich, responsive interfaces and implemented client-facing features by translating business requirements into technical solutions."
+            ],
+            skills: "React, React Native, JavaScript, TypeScript, REST APIs, Firebase, Git"
+        },
+        {
+            organization: "Telus International AI Data Solutions",
+            location: "Tampere, Finland",
             logo: "/Telus_International_logo.svg",
-            title: "Data Analyst",
-            date: "2021 - 2023",
+            title: "AI Data Analyst",
+            date: "Oct 2021 – Feb 2023",
             description: [
-                "Collaborated on various projects focused on processing data for AI training purposes.",
-                "Performed data collection from multiple sources, ensuring a comprehensive and diverse dataset for AI model training.",
-                "Conducted data annotation, accurately labeling and categorizing information to facilitate efficient AI training processes.",
-                "Conducted data analysis, identifying patterns, trends, and insights to inform AI model development and optimization.",
-                "Implemented quality assurance processes, validating the accuracy and consistency of the collected and annotated data to ensure optimal AI training results."
-            ]
-        },
-        {
-            organization: "Pohjola Insurance",
-            logo: "/Pohjola_logo.svg",
-            title: "Operations Production Owner / Claims Advisor",
-            date: "2020 - 2023",
-            description: [
-                "Acted as a key contributor in the optimization and automation of insurance claims operations and processes for a large insurance company.",
-                "Spearheaded an automation project for a specific claims task, replacing manual processes with a software robot, which increased operational efficiency and reduced workload equivalent to 2 full-time employees.",
-                "Monitored team performance, ensuring goal achievement and effective prioritization of tasks.",
-                "Facilitated team ceremonies, promoting collaboration, communication, and continuous improvement.",
-                "Collaborated closely with the team to identify areas of improvement and develop streamlined claims handling procedures for both manual and automated tasks.",
-                "Played a crucial role in enhancing claims throughput and quality by continuously refining and implementing advanced process solutions."
-            ]
-        },
-        {
-            organization: "KVS Oy (Independent Contractor)",
-            logo: "/kvs_logo.svg",
-            title: "Localization Consultant",
-            date: "2022 - 2023",
-            description: [
-                "Localized training and marketing materials.",
-                "Demonstrated strong project management skills by efficiently handling expanding project scope and delivering on time.",
-                "Collaborated closely with client to enhance the quality and effectiveness of localized materials."
+                "Collaborated on AI training projects, evaluated model performance, including those related to speech recognition, voice assistants, search algorithms, and Large Language Models (LLMs).",
+                "Applied quality assurance methodologies to improve AI model training efficiency and dataset quality.",
+                "Ensured continuous improvement of AI datasets through rigorous evaluation and feedback loops."
             ]
         }
     ];
@@ -77,9 +65,16 @@ export default function Experience() {
                                         className="object-contain object-left"
                                     />
                                 </div>
-                                <span className="font-raleway text-white/40 text-sm tracking-wider uppercase">
-                                    {exp.date}
-                                </span>
+                                <div className="flex flex-col gap-1">
+                                    <span className="font-raleway text-white/40 text-sm tracking-wider uppercase">
+                                        {exp.date}
+                                    </span>
+                                    {exp.location && (
+                                        <span className="font-raleway text-white/30 text-xs italic">
+                                            {exp.location}
+                                        </span>
+                                    )}
+                                </div>
                             </div>
 
                             {/* Right side: Content */}
@@ -101,6 +96,14 @@ export default function Experience() {
                                         </li>
                                     ))}
                                 </ul>
+
+                                {exp.skills && (
+                                    <div className="mt-2">
+                                        <p className="font-raleway text-sm text-white/40">
+                                            <span className="text-emerald-500/60 font-medium">Relevant Skills:</span> {exp.skills}
+                                        </p>
+                                    </div>
+                                )}
                             </div>
 
                             {/* Decorative line between items */}
