@@ -16,13 +16,13 @@ export default function Home() {
       <Hero />
       <div className="max-w-screen-md mx-auto px-8 relative z-10 bg-dark">
 
-          <Skills />
-          <Experience />
-          <Education />
-          <Certs />
-          <Languages />
-          <Projects />
-          <Contact />
+        <Projects />
+        <Skills />
+        <Experience />
+        <Education />
+        <Certs />
+        <Languages />
+        <Contact />
 
       </div>
     </div>

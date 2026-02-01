@@ -14,12 +14,12 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Profile', href: '#profile' },
-    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Stack', href: '#skills' },
     { name: 'Experience', href: '#experience' },
     { name: 'Education', href: '#education' },
-    { name: 'Certs', href: '#certs' },
+    { name: 'Courses/Certifications', href: '#certs' },
     { name: 'Languages', href: '#languages' },
-    { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
 
