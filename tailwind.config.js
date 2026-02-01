@@ -6,15 +6,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'dark': '#1B1725',
-        'pomp': '#925D9F',
-        'lavender': '#E3DFFF',
-        'thistle': '#D3C0CD',
-        'celtic-blue': '#226CE0',
+        'dark': 'oklch(12.9% 0.042 264.695)',
+        'argent': '#C1C1BF',
       },
       fontFamily: {
         'sans': 'Epilogue',
         'mono': 'Space Mono',
+        'raleway': ['Raleway', 'sans-serif'],
       },
     }
   },

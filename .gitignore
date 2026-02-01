@@ -1,4 +1,7 @@
 node_modules
 .next
 .next/*
-.DS_STORE
+.DS_Store
+.DS_Store?
+**/.DS_Store
+local/
