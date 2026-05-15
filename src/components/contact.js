@@ -3,12 +3,6 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
 export default function Contact() {
     const contactInfo = [
         {
-            icon: <FaPhone className="w-5 h-5" />,
-            label: "Phone",
-            value: "(+52) 313 7309306",
-            href: "tel:+523137309306"
-        },
-        {
             icon: <FaEnvelope className="w-5 h-5" />,
             label: "Email",
             value: "tomi.w.jokinen@gmail.com",
