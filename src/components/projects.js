@@ -48,6 +48,10 @@ export default function Projects() {
             title: "Cairn",
             subtitle: "Nanopayment oracle for sensor networks (Arc)",
             badge: "Winner · LabLab.ai — Agentic Economy on Arc",
+            metrics: [
+                { value: "1st place winner", label: "Agentic Economy on Arc" },
+                { value: "2,050", label: "Participants" }
+            ],
             description:
                 "Hackathon-winning nanopayment oracle network for community environmental sensors on Circle Arc: operators expose x402-gated readings and earn USDC per query; autonomous agents pay nanopayments (EIP-3009 via Circle) for verified data. Includes Solidity contracts (Foundry), TypeScript aggregator and operator services, insurance-style demo agent, and a React dashboard.",
             features: [
