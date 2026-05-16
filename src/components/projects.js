@@ -49,7 +49,7 @@ export default function Projects() {
             subtitle: "Nanopayment oracle for sensor networks (Arc)",
             badge: "Winner · LabLab.ai — Agentic Economy on Arc",
             description:
-                "Hackathon-winning protocol for community environmental sensors on Circle Arc: operators expose x402-gated readings and earn USDC per query; autonomous agents pay nanopayments (EIP-3009 via Circle) for verified data. Includes Solidity contracts (Foundry), TypeScript aggregator and operator services, insurance-style demo agent, and a React dashboard.",
+                "Hackathon-winning nanopayment oracle network for community environmental sensors on Circle Arc: operators expose x402-gated readings and earn USDC per query; autonomous agents pay nanopayments (EIP-3009 via Circle) for verified data. Includes Solidity contracts (Foundry), TypeScript aggregator and operator services, insurance-style demo agent, and a React dashboard.",
             features: [
                 "Full HTTP 402 → authorize → settle loop across aggregator and sensor operators using x402",
                 "On-chain registries, attestations, reputation, and slashing; quorum verification with MAD outlier rejection",
