@@ -54,7 +54,7 @@ export default function Hero() {
                       Software Engineer
                     </h2>
                     <p className="z-10 font-raleway font-normal text-[0.65rem]/snug md:text-[0.95rem]/snug lg:text-[1.1rem]/snug tracking-[0.12em] uppercase text-slate-950/85 max-w-md mt-2 md:mt-3">
-                      Mobile specialist · Web & APIs · AI-adjacent platforms
+                      Mobile specialist · Web & APIs · AI systems
                     </p>
                   </div>
                 </div>
@@ -71,7 +71,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 w-full py-8 md:py-12">
         <div className="max-w-3xl">
           <p className="font-raleway font-normal text-[0.8rem] md:text-[1.25rem] lg:text-[1.5rem] leading-relaxed text-argent border-l-2 border-emerald pl-6 py-2">
-            I&apos;m a software engineer specializing in native Android and iOS—architecture, UX, releases, and production operations. I also ship frontend with React and Next.js and collaborate closely on REST APIs and backend integrations. Open to frontend, full-stack, collaborative backend roles with room to grow server-side ownership, and platform work around AI agents and multimodal products.
+          Software engineer with deep production experience in mobile applications and a broad interest in systems, platforms, and emerging AI-native products. I enjoy working across layers of a product stack, learning new technologies quickly, and building practical software that ships.
           </p>
         </div>
       </div>
