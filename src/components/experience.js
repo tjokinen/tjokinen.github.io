@@ -6,7 +6,7 @@ export default function Experience() {
             organization: "TravelWifi",
             location: "Houston, Texas, United States (Remote)",
             logo: "/twlogo.svg",
-            title: "Senior Mobile Engineer",
+            title: "Senior Software Engineer (Mobile)",
             date: "May 2023 – Present",
             description: [
                 "Owned the end-to-end mobile development lifecycle for Android and iOS applications, from requirements gathering and technical design to implementation, release, monitoring, and ongoing maintenance.",
@@ -35,12 +35,12 @@ export default function Experience() {
             organization: "Telus International AI Data Solutions",
             location: "Tampere, Finland",
             logo: "/Telus_International_logo.svg",
-            title: "AI Data Analyst",
+            title: "AI Training & Data Analyst",
             date: "Oct 2021 – Feb 2023",
             description: [
-                "Collaborated on AI training projects, evaluated model performance, including those related to speech recognition, voice assistants, search algorithms, and Large Language Models (LLMs).",
-                "Applied quality assurance methodologies to improve AI model training efficiency and dataset quality.",
-                "Ensured continuous improvement of AI datasets through rigorous evaluation and feedback loops."
+                "Supported AI training and evaluation initiatives across speech recognition, voice assistants, search quality, Large Language Models (LLMs), and multimodal (text, audio, vision) annotation workflows.",
+                "Contributed to human-feedback and quality loops (including RLHF-style tasks) to improve model behavior, dataset usefulness, and evaluator consistency.",
+                "Applied quality assurance practices to raise training efficiency, reduce error rates in labeled data, and tighten feedback cycles with program guidelines."
             ]
         }
     ];

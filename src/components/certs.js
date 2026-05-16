@@ -1,6 +1,20 @@
 export default function Certs() {
     const certifications = [
         {
+            organization: "Udacity / AWS",
+            icon: "devicon-amazonwebservices-plain-wordmark colored",
+            title: "AWS AI & ML Practitioner Challenge",
+            date: "2026",
+            description: "Completed the AWS-sponsored AI and ML practitioner curriculum on Udacity (foundation for AWS ML literacy). Working toward the AWS AI Agent Developer Nanodegree; certification exam targeted July 2026."
+        },
+        {
+            organization: "LabLab.ai",
+            icon: "devicon-typescript-plain colored",
+            title: "Winner — Cairn (Agentic Economy on Arc)",
+            date: "2026",
+            description: "Winner with Cairn at Agentic Economy on Arc — Circle Arc settlement, x402 APIs, and agent-facing nanopayments for verified sensor readings. Story and links under Portfolio → Hackathons."
+        },
+        {
             organization: "Microsoft / Coursera",
             icon: "devicon-azure-plain colored",
             title: "Create Serverless Applications",

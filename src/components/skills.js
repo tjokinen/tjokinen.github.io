@@ -19,7 +19,7 @@ export default function Skills() {
                     Core Stack
                 </h2>
                 <p className="font-raleway text-white/60 text-sm mb-4 max-w-2xl">
-                    A snapshot of the technologies I use regularly in production work.
+                    Heaviest day-to-day depth on mobile (Kotlin, Swift, Jetpack Compose, SwiftUI, React Native). I also use React, Next.js, and TypeScript for web and shared product surfaces—this site is Next.js.
                 </p>
                 
                 <div className="flex flex-wrap gap-4">
