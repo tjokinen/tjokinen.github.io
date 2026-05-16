@@ -12,7 +12,7 @@ export default function Certs() {
             icon: "devicon-typescript-plain colored",
             title: "Winner — Cairn (Agentic Economy on Arc)",
             date: "2026",
-            description: "Winner with Cairn at Agentic Economy on Arc — Circle Arc settlement, x402 APIs, and agent-facing nanopayments for verified sensor readings. Story and links under Portfolio → Hackathons."
+            description: "Winner with Cairn at Agentic Economy on Arc — Circle Arc settlement, x402 APIs, and agent-facing nanopayments for verified sensor readings. Story and links under Portfolio → Projects."
         },
         {
             organization: "Microsoft / Coursera",

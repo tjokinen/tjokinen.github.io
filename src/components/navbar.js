@@ -15,7 +15,6 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Profile', href: '#profile' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Hackathons', href: '#hackathons' },
     { name: 'Stack', href: '#skills' },
     { name: 'Experience', href: '#experience' },
     { name: 'Education', href: '#education' },

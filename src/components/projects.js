@@ -1,8 +1,13 @@
 import Image from "next/image"
 
+function youtubeEmbedSrc(url) {
+    return url.includes("?") ? url : `${url}?rel=0`
+}
+
 export default function Projects() {
-    const productionApps = [
+    const projects = [
         {
+            kind: "production",
             title: "Navimo",
             description: "Production mobile app for purchasing and managing travel eSIMs, providing connectivity in 200+ destinations worldwide.",
             metrics: [
@@ -21,6 +26,7 @@ export default function Projects() {
             appStore: "#"
         },
         {
+            kind: "production",
             title: "TravelWifi",
             description: "Production mobile app for managing data plans for portable hotspots and purchasing eSIMs, used by customers worldwide.",
             metrics: [
@@ -36,11 +42,9 @@ export default function Projects() {
             image: "/tw-screenshot.jpg",
             playStore: "#",
             appStore: "#"
-        }
-    ];
-
-    const hackathons = [
+        },
         {
+            kind: "hackathon",
             title: "Cairn",
             subtitle: "Nanopayment oracle for sensor networks (Arc)",
             badge: "Winner · LabLab.ai — Agentic Economy on Arc",
@@ -55,10 +59,10 @@ export default function Projects() {
             github: "https://github.com/tjokinen/cairn",
             hackathonUrl: "https://lablab.ai/ai-hackathons/nano-payments-arc/",
             demoUrl: "https://cairn-aggregator.vercel.app",
-            youtubeEmbedSrc: "https://www.youtube.com/embed/-eZNJgCSrZI",
-            youtubeWatchUrl: "https://www.youtube.com/watch?v=-eZNJgCSrZI"
+            youtubeEmbedSrc: "https://www.youtube.com/embed/-eZNJgCSrZI"
         },
         {
+            kind: "hackathon",
             title: "LHADA",
             subtitle: "Lunar Habitat Anomaly Diagnosis Agent",
             badge: "AMD Developer Cloud Hackathon 2026 · AI Agents track (results pending)",
@@ -73,45 +77,70 @@ export default function Projects() {
             github: "https://github.com/tjokinen/lunar-habitat-anomaly-diagnosis-agent",
             hackathonUrl: "https://lablab.ai/ai-hackathons/amd-developer",
             demoUrl: "https://huggingface.co/spaces/tjokinen/lunar-habitat-anomaly-diagnosis-agent",
-            youtubeEmbedSrc: "https://www.youtube.com/embed/e6L0mwShRJk",
-            youtubeWatchUrl: "https://www.youtube.com/watch?v=e6L0mwShRJk"
+            youtubeEmbedSrc: "https://www.youtube.com/embed/e6L0mwShRJk"
         }
     ];
 
     return (
-        <section id="projects" className="py-24">
+        <section id="projects" className="py-24 scroll-mt-28">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
                     <div>
                         <h2 className="font-raleway font-medium text-4xl md:text-5xl tracking-tight">
-                            Production Apps
+                            Projects
                         </h2>
                         <p className="font-raleway text-white/60 text-lg mt-4 max-w-2xl">
-                            Flagship native apps on global stores—UX, reliability, and measurable production impact. Hackathon builds and agent-facing platforms are listed below.
+                            Production mobile apps on global stores, plus hackathon builds—agent-native payments on Arc, on-prem agentic diagnostics, and live demos where available.
                         </p>
                     </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    {productionApps.map((project, index) => (
+                    {projects.map((project) => (
                         <div
-                            key={index}
+                            key={project.title}
                             className="group flex flex-col bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-emerald-500/30 transition-all duration-500"
                         >
-                            <div className="relative h-64 md:h-80 overflow-hidden">
-                                <Image
-                                    src={project.image}
-                                    alt={project.title}
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-60" />
+                            <div className="relative h-64 md:h-80 overflow-hidden bg-black">
+                                {project.kind === "production" ? (
+                                    <>
+                                        <Image
+                                            src={project.image}
+                                            alt={project.title}
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-60" />
+                                    </>
+                                ) : (
+                                    <>
+                                        <iframe
+                                            src={youtubeEmbedSrc(project.youtubeEmbedSrc)}
+                                            title={`${project.title} demo video`}
+                                            loading="lazy"
+                                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowFullScreen
+                                            className="absolute inset-0 h-full w-full"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-60 pointer-events-none" />
+                                    </>
+                                )}
                             </div>
 
                             <div className="p-8 flex flex-col flex-grow">
-                                <h3 className="font-raleway font-medium text-2xl text-white/90 mb-4 group-hover:text-emerald-400 transition-colors duration-300">
+                                <h3 className={`font-raleway font-medium text-2xl text-white/90 group-hover:text-emerald-400 transition-colors duration-300 ${project.kind === "production" ? "mb-4" : "mb-1"}`}>
                                     {project.title}
                                 </h3>
+                                {project.subtitle && (
+                                    <p className="font-raleway text-white/50 text-sm mb-3">
+                                        {project.subtitle}
+                                    </p>
+                                )}
+                                {project.badge && (
+                                    <p className="font-raleway text-xs uppercase tracking-widest text-emerald-500/80 mb-4">
+                                        {project.badge}
+                                    </p>
+                                )}
 
                                 <p className="font-raleway text-white/70 leading-relaxed mb-6">
                                     {project.description}
@@ -133,18 +162,20 @@ export default function Projects() {
                                 )}
 
                                 <div className="space-y-4 mb-8">
-                                    <h4 className="font-raleway text-xs font-semibold uppercase tracking-widest text-white/40">Key Contributions</h4>
-                                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                    <h4 className="font-raleway text-xs font-semibold uppercase tracking-widest text-white/40">
+                                        {project.kind === "production" ? "Key Contributions" : "Highlights"}
+                                    </h4>
+                                    <ul className={`grid grid-cols-1 gap-2 ${project.kind === "production" ? "md:grid-cols-2" : ""}`}>
                                         {project.features.map((feature, i) => (
-                                            <li key={i} className="font-raleway text-sm text-white/60 flex items-center gap-2">
-                                                <span className="w-1 h-1 bg-emerald-500 rounded-full shrink-0" />
-                                                {feature}
+                                            <li key={i} className="font-raleway text-sm text-white/60 flex items-start gap-2">
+                                                <span className="w-1 h-1 bg-emerald-500 rounded-full shrink-0 mt-2" />
+                                                <span>{feature}</span>
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
 
-                                <div className="mt-auto pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-6">
+                                <div className="mt-auto pt-6 border-t border-white/10 flex flex-col gap-6">
                                     <div className="flex flex-wrap gap-2">
                                         {project.stack.map((tech, i) => (
                                             <span key={i} className="px-3 py-1 bg-white/5 rounded-full text-[10px] font-medium text-white/50 uppercase tracking-wider border border-white/5">
@@ -153,107 +184,33 @@ export default function Projects() {
                                         ))}
                                     </div>
 
-                                    <div className="flex gap-4">
-                                        {project.playStore !== "#" && (
-                                            <a
-                                                href={project.playStore}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex items-center gap-2 text-white/80 hover:text-emerald-400 transition-colors duration-300"
-                                            >
-                                                <i className="devicon-android-plain text-xl" />
-                                                <span className="text-xs font-medium uppercase tracking-widest">Play Store</span>
-                                            </a>
-                                        )}
-                                        {project.appStore !== "#" && (
-                                            <a
-                                                href={project.appStore}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex items-center gap-2 text-white/80 hover:text-emerald-400 transition-colors duration-300"
-                                            >
-                                                <i className="devicon-apple-original text-xl" />
-                                                <span className="text-xs font-medium uppercase tracking-widest">App Store</span>
-                                            </a>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                <div id="hackathons" className="scroll-mt-28 pt-24 mt-24 border-t border-white/10">
-                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
-                        <div>
-                            <h2 className="font-raleway font-medium text-4xl md:text-5xl tracking-tight">
-                                Hackathons
-                            </h2>
-                            <p className="font-raleway text-white/60 text-lg mt-4 max-w-2xl">
-                                Recent builds spanning agent-native payments on Arc and on-prem agentic diagnostics over real telemetry—with demo videos, repos, judge pages, and live demos where available.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        {hackathons.map((project, index) => (
-                            <div
-                                key={index}
-                                className="group flex flex-col bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-emerald-500/30 transition-all duration-500"
-                            >
-                                <div className="relative h-64 md:h-80 overflow-hidden bg-black">
-                                    {project.youtubeEmbedSrc && (
-                                        <iframe
-                                            src={project.youtubeEmbedSrc.includes("?") ? project.youtubeEmbedSrc : `${project.youtubeEmbedSrc}?rel=0`}
-                                            title={`${project.title} demo video`}
-                                            loading="lazy"
-                                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            allowFullScreen
-                                            className="absolute inset-0 h-full w-full"
-                                        />
-                                    )}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-60 pointer-events-none" />
-                                </div>
-
-                                <div className="p-8 flex flex-col flex-grow">
-                                    <h3 className="font-raleway font-medium text-2xl text-white/90 mb-1 group-hover:text-emerald-400 transition-colors duration-300">
-                                        {project.title}
-                                    </h3>
-                                    {project.subtitle && (
-                                        <p className="font-raleway text-white/50 text-sm mb-3">
-                                            {project.subtitle}
-                                        </p>
-                                    )}
-                                    <p className="font-raleway text-xs uppercase tracking-widest text-emerald-500/80 mb-4">
-                                        {project.badge}
-                                    </p>
-
-                                    <p className="font-raleway text-white/70 leading-relaxed mb-6">
-                                        {project.description}
-                                    </p>
-
-                                    <div className="space-y-4 mb-8">
-                                        <h4 className="font-raleway text-xs font-semibold uppercase tracking-widest text-white/40">Highlights</h4>
-                                        <ul className="grid grid-cols-1 gap-2">
-                                            {project.features.map((feature, i) => (
-                                                <li key={i} className="font-raleway text-sm text-white/60 flex items-start gap-2">
-                                                    <span className="w-1 h-1 bg-emerald-500 rounded-full shrink-0 mt-2" />
-                                                    <span>{feature}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-
-                                    <div className="mt-auto pt-6 border-t border-white/10 flex flex-col gap-6">
-                                        <div className="flex flex-wrap gap-2">
-                                            {project.stack.map((tech, i) => (
-                                                <span key={i} className="px-3 py-1 bg-white/5 rounded-full text-[10px] font-medium text-white/50 uppercase tracking-wider border border-white/5">
-                                                    {tech}
-                                                </span>
-                                            ))}
+                                    {project.kind === "production" ? (
+                                        <div className="flex gap-4">
+                                            {project.playStore !== "#" && (
+                                                <a
+                                                    href={project.playStore}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex items-center gap-2 text-white/80 hover:text-emerald-400 transition-colors duration-300"
+                                                >
+                                                    <i className="devicon-android-plain text-xl" />
+                                                    <span className="text-xs font-medium uppercase tracking-widest">Play Store</span>
+                                                </a>
+                                            )}
+                                            {project.appStore !== "#" && (
+                                                <a
+                                                    href={project.appStore}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex items-center gap-2 text-white/80 hover:text-emerald-400 transition-colors duration-300"
+                                                >
+                                                    <i className="devicon-apple-original text-xl" />
+                                                    <span className="text-xs font-medium uppercase tracking-widest">App Store</span>
+                                                </a>
+                                            )}
                                         </div>
-
-                                        <div className="flex flex-wrap gap-x-8 gap-y-3">
+                                    ) : (
+                                        <div className="flex flex-wrap gap-x-8 gap-y-3 items-center">
                                             <a
                                                 href={project.github}
                                                 target="_blank"
@@ -280,11 +237,11 @@ export default function Projects() {
                                                 Live demo
                                             </a>
                                         </div>
-                                    </div>
+                                    )}
                                 </div>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
