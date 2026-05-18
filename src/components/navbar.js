@@ -37,6 +37,7 @@ export default function Navbar() {
   };
 
   return (
+    <>
     <nav
       className={`fixed top-0 left-0 right-0 transition-all duration-300 px-6 py-4 ${
         mobileMenuOpen ? 'z-[60]' : 'z-50'
@@ -100,33 +101,34 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-
-      {/* Mobile Navigation Overlay */}
-      <div
-        className={`fixed inset-0 bg-dark/95 backdrop-blur-lg z-[55] transition-transform duration-300 lg:hidden ${
-          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-        style={{ top: 0, height: '100vh' }}
-      >
-        <div className="flex flex-col items-center justify-center h-full space-y-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={(e) => handleScrollTo(e, link.href)}
-              className="font-raleway text-2xl font-medium text-white/80 hover:text-white"
-            >
-              {link.name}
-            </a>
-          ))}
-          <button
-            onClick={() => setMobileMenuOpen(false)}
-            className="mt-8 text-white/50 hover:text-white transition-colors"
-          >
-            Close
-          </button>
-        </div>
-      </div>
     </nav>
+
+    {/* Mobile Navigation Overlay */}
+    <div
+      className={`fixed inset-0 bg-dark/95 backdrop-blur-lg z-[55] transition-transform duration-300 lg:hidden ${
+        mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+      }`}
+      style={{ top: 0, height: '100vh' }}
+    >
+      <div className="flex flex-col items-center justify-center h-full space-y-8">
+        {navLinks.map((link) => (
+          <a
+            key={link.name}
+            href={link.href}
+            onClick={(e) => handleScrollTo(e, link.href)}
+            className="font-raleway text-2xl font-medium text-white/80 hover:text-white"
+          >
+            {link.name}
+          </a>
+        ))}
+        <button
+          onClick={() => setMobileMenuOpen(false)}
+          className="mt-8 text-white/50 hover:text-white transition-colors"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    </>
   );
 }

@@ -9,6 +9,7 @@ export default function Skills() {
         { name: "Next.js", icon: "devicon-nextjs-original-wordmark" },
         { name: "TypeScript", icon: "devicon-typescript-plain colored" },
         { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+        { name: "Node.js", icon: "devicon-nodejs-plain colored" },
         { name: "Figma", icon: "devicon-figma-plain colored" },
     ];
 

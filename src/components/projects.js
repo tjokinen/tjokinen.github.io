@@ -69,7 +69,7 @@ export default function Projects() {
             kind: "hackathon",
             title: "LHADA",
             subtitle: "Lunar Habitat Anomaly Diagnosis Agent",
-            badge: "AMD Developer Cloud Hackathon 2026 · AI Agents track (results pending)",
+            badge: "AMD Developer Cloud Hackathon 2026 · AI Agents track",
             description:
                 "Agentic diagnostics over real EDEN ISS greenhouse telemetry (replay-as-lunar-scenario): DAMP matrix-profile and threshold detectors raise events; a tool-calling LLM investigates against a citation-backed failure-mode KB and emits structured diagnoses with full reasoning traces. FastAPI + WebSockets backend and Gradio UI; Hugging Face Space for offline replay.",
             features: [
