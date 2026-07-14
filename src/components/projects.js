@@ -82,6 +82,42 @@ export default function Projects() {
             hackathonUrl: "https://lablab.ai/ai-hackathons/amd-developer",
             demoUrl: "https://huggingface.co/spaces/tjokinen/lunar-habitat-anomaly-diagnosis-agent",
             youtubeEmbedSrc: "https://www.youtube.com/embed/e6L0mwShRJk"
+        },
+        {
+            kind: "oss",
+            title: "blease",
+            subtitle: "Resilience-first Android BLE library",
+            badge: "Open Source · Kotlin",
+            description:
+                "Android coroutines/Flow BLE library that mitigates GATT error 133 correctly by default and ships a scriptable fake transport as a published artifact, so apps can unit-test their BLE logic without hardware.",
+            features: [
+                "GATT 133 mitigation by default: serialized GATT operations, explicit close on every non-connected transition, capped jittered exponential backoff",
+                "Published :blease-test fake transport for hardware-free, millisecond-fast BLE unit tests with runTest and Turbine",
+                "At-most-once writes by default and a sealed BleResult error model, with connection death exposed as StateFlow state",
+                "Public API tracked with committed ABI dumps; verified against real hardware"
+            ],
+            stack: ["Kotlin", "Coroutines", "Flow", "Android BLE / GATT", "Turbine", "Dokka", "JitPack"],
+            github: "https://github.com/tjokinen/blease",
+            packageUrl: "https://jitpack.io/#tjokinen/blease",
+            packageLabel: "JitPack"
+        },
+        {
+            kind: "oss",
+            title: "android-bcv-bridge",
+            subtitle: "Gradle plugin bridging BCV and AGP 9 built-in Kotlin",
+            badge: "Open Source · Gradle Plugin Portal",
+            description:
+                "Gradle plugin that restores the Kotlin Binary Compatibility Validator's apiDump/apiCheck tasks for Android library modules built with AGP 9 built-in Kotlin, where BCV silently registers no tasks.",
+            features: [
+                "Registers BCV's own task types directly against the compiled classes of AGP built-in Kotlin — no standalone Kotlin plugin required",
+                "Wires apiCheck into check so CI fails on any binary-incompatible public API change",
+                "Verified end-to-end by a TestKit functional test running with the configuration cache enabled",
+                "Published on the Gradle Plugin Portal as a stopgap until KGP's built-in ABI validation supports Android (KT-78025)"
+            ],
+            stack: ["Kotlin", "Gradle", "AGP 9", "Binary Compatibility Validator", "Gradle TestKit"],
+            github: "https://github.com/tjokinen/android-bcv-bridge",
+            packageUrl: "https://plugins.gradle.org/plugin/io.github.tjokinen.android-bcv-bridge",
+            packageLabel: "Plugin Portal"
         }
     ];
 
@@ -94,7 +130,7 @@ export default function Projects() {
                             Projects
                         </h2>
                         <p className="font-raleway text-white/60 text-lg mt-4 max-w-2xl">
-                            Production mobile apps on global stores, plus hackathon builds—agent-native payments on Arc, on-prem agentic diagnostics, and live demos where available.
+                            Production mobile apps on global stores, hackathon builds—agent-native payments on Arc, on-prem agentic diagnostics—and open-source Android tooling: a resilience-first BLE library and a Gradle plugin for binary compatibility validation.
                         </p>
                     </div>
                 </div>
@@ -105,6 +141,7 @@ export default function Projects() {
                             key={project.title}
                             className="group flex flex-col bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-emerald-500/30 transition-all duration-500"
                         >
+                            {project.kind !== "oss" && (
                             <div className="relative h-64 md:h-80 overflow-hidden bg-black">
                                 {project.kind === "production" ? (
                                     <>
@@ -130,6 +167,7 @@ export default function Projects() {
                                     </>
                                 )}
                             </div>
+                            )}
 
                             <div className="p-8 flex flex-col flex-grow">
                                 <h3 className={`font-raleway font-medium text-2xl text-white/90 group-hover:text-emerald-400 transition-colors duration-300 ${project.kind === "production" ? "mb-4" : "mb-1"}`}>
@@ -224,22 +262,36 @@ export default function Projects() {
                                                 <i className="devicon-github-original text-xl" />
                                                 <span className="text-xs font-medium uppercase tracking-widest">Repository</span>
                                             </a>
-                                            <a
-                                                href={project.hackathonUrl}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-xs font-medium uppercase tracking-widest text-white/80 hover:text-emerald-400 transition-colors duration-300"
-                                            >
-                                                Hackathon page
-                                            </a>
-                                            <a
-                                                href={project.demoUrl}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-xs font-medium uppercase tracking-widest text-white/80 hover:text-emerald-400 transition-colors duration-300"
-                                            >
-                                                Live demo
-                                            </a>
+                                            {project.hackathonUrl && (
+                                                <a
+                                                    href={project.hackathonUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-xs font-medium uppercase tracking-widest text-white/80 hover:text-emerald-400 transition-colors duration-300"
+                                                >
+                                                    Hackathon page
+                                                </a>
+                                            )}
+                                            {project.demoUrl && (
+                                                <a
+                                                    href={project.demoUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-xs font-medium uppercase tracking-widest text-white/80 hover:text-emerald-400 transition-colors duration-300"
+                                                >
+                                                    Live demo
+                                                </a>
+                                            )}
+                                            {project.packageUrl && (
+                                                <a
+                                                    href={project.packageUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-xs font-medium uppercase tracking-widest text-white/80 hover:text-emerald-400 transition-colors duration-300"
+                                                >
+                                                    {project.packageLabel}
+                                                </a>
+                                            )}
                                         </div>
                                     )}
                                 </div>
