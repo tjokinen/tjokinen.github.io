@@ -10,6 +10,19 @@
   animation: pulse-border 4s infinite ease-in-out;
 }
 
+@keyframes img-shimmer-sweep {
+  100% { transform: translateX(100%); }
+}
+
+.img-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  animation: img-shimmer-sweep 1.6s infinite;
+}
+
 
 .typewriter {
     overflow: hidden; /* Ensures the content is not revealed until the animation */

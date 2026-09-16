@@ -1,4 +1,8 @@
 import Image from "next/image"
+import FadeImage from "@/components/fade-image"
+
+const HERO_BG_BLUR =
+  "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAABwAwCdASoYAAgAPzmGulOvKSWisAgB4CcJZwDM0CHBP0jCSQAA/LyGO5InX339FnIj5DdpsUUT09MoEJ/gDFAA"
 
 export default function Hero() {
   return (
@@ -14,20 +18,21 @@ export default function Hero() {
         }}
       >
         <div className="absolute inset-0 z-0 w-full h-full">
-          <Image
-            src="/hero-bg.jpg"
+          <FadeImage
+            src="/hero-bg.webp"
             alt="Background"
             width={1344}
             height={448}
             className="w-full h-full object-cover"
             priority
             sizes="100vw"
+            blurDataURL={HERO_BG_BLUR}
           />
         </div>
 
         <div className="absolute top-0 right-0 h-full z-30 pointer-events-none">
           <Image
-            src="/hero-tomi3.png"
+            src="/hero-tomi3.webp"
             alt="Tomi Jokinen"
             width={448}
             height={448}

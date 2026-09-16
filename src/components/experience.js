@@ -22,7 +22,7 @@ export default function Experience() {
         {
             organization: "Freelance",
             location: "Tampere, Finland",
-            logo: "/photo.png", // Using photo.png as a placeholder for freelance if no specific logo
+            logo: "/photo.webp", // Using photo as a placeholder for freelance if no specific logo
             title: "Frontend & Mobile Engineer",
             date: "Sep 2020 – May 2023",
             description: [

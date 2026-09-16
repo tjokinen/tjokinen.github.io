@@ -1,8 +1,5 @@
-import Image from "next/image"
-
-function youtubeEmbedSrc(url) {
-    return url.includes("?") ? url : `${url}?rel=0`
-}
+import FadeImage from "@/components/fade-image"
+import YouTubeEmbed from "@/components/youtube-embed"
 
 export default function Projects() {
     const projects = [
@@ -21,7 +18,8 @@ export default function Projects() {
                 "Built core flows for purchasing, installing, and managing travel eSIMs"
             ],
             stack: ["Kotlin", "Jetpack Compose", "Swift", "SwiftUI", "Firebase", "Stripe", "Datadog RUM", "Algolia"],
-            image: "/navimo-screenshot.jpeg",
+            image: "/navimo-screenshot.webp",
+            imageBlur: "data:image/webp;base64,UklGRh4BAABXRUJQVlA4IBIBAABwBwCdASoYADUAPzl8tVOvJySis/mYAeAnCWwAxelFegBn4LWsSqDtzm1G+Z+mYvEZoOjhRBHj1GVrDsPF0hATZWfMAAD++qV+xdUc7ltNXICvzXgB5DsfCxa95W0WWDVnUmY+wfCe8hcV4i29jIBgw78lfDy0y8ip8UhdAQTijki9tbA3j7d6nDOq6yjUkgthP8fQkJOO47wqq1868ivCP+0lxlEEnm4bYSKVKaxKBa1VUHEBsjXYAW/dy+FpSbqEE3EfUySf5Mgoqr03mC3jVcMA43VO9+ajexgKqMre9wJVllAG/JIBED2B/KoRcoR+sxJtTMYmsleAVhr7YNaqkJ0jyuqy8VTiFPJeCdgdgAAA",
             playStore: "#",
             appStore: "#"
         },
@@ -39,7 +37,8 @@ export default function Projects() {
                 "Introduced Datadog RUM and reduced per-session error rate from ~5% to near zero"
             ],
             stack: ["Kotlin", "Jetpack Compose", "Swift", "SwiftUI", "Firebase", "Braintree", "Datadog RUM", "Algolia"],
-            image: "/tw-screenshot.jpg",
+            image: "/tw-screenshot.webp",
+            imageBlur: "data:image/webp;base64,UklGRnwBAABXRUJQVlA4IHABAADQCACdASoYADUAPzmMv1mvKKajqBgKqeAnCWwAs7PCw+EkfASpKgA3AAtXnQWTt69/hVLc/JVX/FkTeZkyPSevxadC6A7y0gFiLKWUOc0AAP7tWsZ5P3stJ0Gkgs92I0v2QKc+xpjQtw8AzzhqWApfU1HFGEHUl+xepL1oTkFgEaofkOKeIY7GyFW8/2zYgYddG2P1T7LE0kPcbx7WXc98B7tg4LQUuzi5EmTbi1g+czV5n9Z8c9Qjv2+AILyJDDjMq3blr0e1exbO+0xRZ6T3Q0Ef5z0tjWVfN0b+GsZu4XDiB5rDIWAD27gVH3Nym+eXEc6UhyTukRpw2+FwDHwBi07/L3AIV+2Z5Ogy3GFbghBE1cZVZY+p/B3w6CPWi0TdMXtVnAHu0W1jsbwlSuo0s5Cy9nvsE4Csx05svHMQ+Dfivebpv2yYjf7GqOlw+XdUu4SOdnOS7NHQYn4VPT2ZhjgIKKwqAG/DZI+bM8AAAA",
             playStore: "#",
             appStore: "#"
         },
@@ -145,26 +144,21 @@ export default function Projects() {
                             <div className="relative h-64 md:h-80 overflow-hidden bg-black">
                                 {project.kind === "production" ? (
                                     <>
-                                        <Image
+                                        <FadeImage
                                             src={project.image}
                                             alt={project.title}
                                             fill
+                                            sizes="(min-width: 1024px) 50vw, 100vw"
+                                            blurDataURL={project.imageBlur}
                                             className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-60" />
-                                    </>
-                                ) : (
-                                    <>
-                                        <iframe
-                                            src={youtubeEmbedSrc(project.youtubeEmbedSrc)}
-                                            title={`${project.title} demo video`}
-                                            loading="lazy"
-                                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            allowFullScreen
-                                            className="absolute inset-0 h-full w-full"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-60 pointer-events-none" />
                                     </>
+                                ) : (
+                                    <YouTubeEmbed
+                                        embedSrc={project.youtubeEmbedSrc}
+                                        title={`${project.title} demo video`}
+                                    />
                                 )}
                             </div>
                             )}
