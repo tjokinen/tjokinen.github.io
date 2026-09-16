@@ -2,10 +2,7 @@ import Head from "next/head"
 import Navbar from "@/components/navbar"
 import Hero from "@/components/hero"
 import Skills from "@/components/skills"
-import Education from "@/components/education"
-import Certs from "@/components/certs"
 import Languages from "@/components/languages"
-import Experience from "@/components/experience"
 import Projects from "@/components/projects"
 import Contact from "@/components/contact"
 
@@ -26,9 +23,6 @@ export default function Home() {
 
         <Projects />
         <Skills />
-        <Experience />
-        <Education />
-        <Certs />
         <Languages />
         <Contact />
 
